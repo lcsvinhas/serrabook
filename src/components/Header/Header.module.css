@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #0d4fd4;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.elemento {
+    text-decoration: none;
+    color: white;
+}
+
+.elemento:hover {
+    text-decoration: underline;
+}
