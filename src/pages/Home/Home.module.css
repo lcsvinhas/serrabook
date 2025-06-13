@@ -1,0 +1,31 @@
+.banner {
+  width: 100%;
+}
+
+.verMais {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    padding: 40px;
+}
+
+.verMais button {
+    background-color: var(--cor-fundo-header);
+    width: 400px;
+    color: var(--cor-branco);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.verMais button:hover {
+    background-color: var(--cor-primaria);
+}
+
+
+/* Apagar depois de colocar o card dos produtos */
+p {
+    max-width: 400px;
+}

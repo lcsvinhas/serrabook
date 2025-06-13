@@ -1,3 +1,14 @@
+:root {
+    --cor-fundo-header: #052659;
+    --cor-primaria: #021024;
+    --cor-secundaria: #5483B3;
+    --cor-terciaria: #7DA0CA;
+    --cor-fundo-primaria: #C1E8FF;
+    --cor-branco: #FFFFFF;
+    --cor-preto: #000000;
+    --cor-dark-mode: #3C3B3B;
+}
+
 * {
     margin: 0;
     padding: 0;
