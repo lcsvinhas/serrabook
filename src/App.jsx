@@ -1,6 +1,6 @@
-import { BrowserRouter } from 'react-router-dom';
-import AppRouter from './routes/AppRouter.jsx';
-import Header from './components/Header/index.jsx';
+import { BrowserRouter } from "react-router-dom";
+import AppRouter from "./routes/AppRouter.jsx";
+import Header from "./components/Header/index.jsx";
 
 export default function App() {
   return (
@@ -8,5 +8,5 @@ export default function App() {
       <Header />
       <AppRouter />
     </BrowserRouter>
-  )
+  );
 }
