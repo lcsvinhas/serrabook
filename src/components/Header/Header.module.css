@@ -1,10 +1,11 @@
 header {
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #0d4fd4;
-    color: white;
+    background-color: var(--cor-fundo-header);
+    color: var(--cor-branco);
 }
 
 ul {
@@ -12,11 +13,25 @@ ul {
     display: flex;
     gap: 20px;
 }
+
 .elemento {
     text-decoration: none;
-    color: white;
+    color: var(--cor-branco);
 }
 
 .elemento:hover {
     text-decoration: underline;
+}
+
+.contato {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contato h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
 }
