@@ -1,0 +1,45 @@
+.cardLivro {
+  width: 200px;
+  padding: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 12px;
+}
+
+.imagemLivro {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.tituloLivro {
+  text-align: left;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.precoLivro {
+  text-align: left;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.botaoCarrinho {
+  background-color: #a5ee2c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.infoLivro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconeCarrinho {
+  width: 20px;
+  height: 20px;
+}
