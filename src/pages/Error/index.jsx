@@ -1,7 +1,10 @@
+import Header from "../../components/Header";
+
 export default function Error() {
   return (
     <div>
-        <h2>404 - Página não encontrada</h2>
+      <Header />
+      <h2>404 - Página não encontrada</h2>
     </div>
   )
 }
