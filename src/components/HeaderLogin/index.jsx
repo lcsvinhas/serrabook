@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import * as styles from "./Header.module.css";
+import * as styles from "./HeaderLogin.module.css";
 import logoBranca from "../../img/logo-branca-1.png";
-import vector from "../../img/vector.png";
 import { useState } from "react";
 
-export default function Header() {
+export default function HeaderLogin() {
     const [menuAberto, setMenuAberto] = useState(false);
 
     const toggleMenu = () => setMenuAberto(!menuAberto);
@@ -14,11 +13,6 @@ export default function Header() {
             <Link to={"/"}><img src={logoBranca} alt="Logotipo do sebo virtual Serrabook" /></Link>
 
             <button onClick={toggleMenu} className={styles.menuBtn}>&#9776;</button>
-
-            <div className={styles.contato}>
-                <img src={vector} alt="Contorno de um ser humano, ilustrando um perfil" />
-                <h2>Bem vindo, usuário</h2>
-            </div>
 
             <nav className={`${styles.menu} ${menuAberto ? styles.ativo : ""}`}>
                 <ul>
