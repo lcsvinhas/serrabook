@@ -5,6 +5,7 @@ import * as styles from './Atualizar.module.css'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Botao from "../../components/Botao";
+import { TrashSimple } from "phosphor-react";
 
 
 export default function Atualizar() {
@@ -32,7 +33,7 @@ export default function Atualizar() {
             <label htmlFor="preco">Preço R$</label>
             <input type="text" id="preco" name="preco" />
               <div className={styles.botoes}>
-                
+                <Botao linkPagina="/" icone={<TrashSimple/>} aria-label="Apagar item"/>
               </div>
           </form>
         </div>

@@ -1,27 +1,34 @@
 import { Link } from "react-router-dom";
 import * as styles from "./Botao.module.css";
+import PropTypes from "prop-types";
 
-export default function Botao({linkPagina, imagem}) {
-    return (
-        <div className={styles.btnIcon}>
-            {/* <Link to={linkPagina}> */}
-                <button>
-                    <img src={imagem.url} alt={imagem.descricao}/>
-                </button>
-            {/* </Link> */}
-        </div>
+export default function Botao(props) {
+    const botaoHTML = (
+        <button className={styles.btBotao} type="button" onClick={props.onClick}>
+            <div className={styles.btIcone}>{props.icone}</div>
+        </button>
     )
+
+    return props.linkPagina ? (
+        <div className={styles.btPrincipal}>
+            <Link to={props.linkPagina}>
+                {botaoHTML}
+            </Link>
+        </div>
+    ) : (
+        <div className={styles.btPrincipal}>
+            {botaoHTML}
+        </div>
+    );
 }
 
+{/* 1. Botão que navega
+    <Botao linkPagina="/" icone={</>} />
 
-{/* import Botao from "../../components/Botao";
-    
+    2. Botão que executa ação local
     <Botao
-                    linkPagina={`/`}
-                    imagem={
-                        {
-                            url: foto,
-                            descricao: 'teste'
-                        }
-                    }
-    /> */}
+        icone={< />}
+        onClick={() => console.log("Apagado!")}
+        aria-label="Apagar item"
+    />
+*/}
