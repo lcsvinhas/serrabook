@@ -41,6 +41,13 @@
     margin-bottom: 30px;
 }
 
+.error {
+    color: brown;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+
 .button {
     display: flex;
     align-items: center;
