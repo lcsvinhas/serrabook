@@ -18,48 +18,27 @@ export default function Atualizar() {
   // })
 
   return (
-  <>
-  <Header/>
-    <div className={styles.principal}>
-      <div className={styles.imagem}>
-        <img src="https://ia902309.us.archive.org/view_archive.php?archive=/20/items/l_covers_0008/l_covers_0008_17.zip&file=0008172473-L.jpg" alt="Capa do livro {livro.nome}" />
-      </div>
-
-      <div className={styles.conteudo}>
-        <label htmlFor="titulo">Titulo</label>
-        <input type="text" id="titulo" name="titulo" />
-
-        <label htmlFor="preco">Preço R$</label>
-        <input type="text" id="preco" name="preco" />
-        <div className={styles.botoes}>
-          {/* <Botao
-            imagem={
-              {
-                url: foto,
-                descricao: 'teste'
-              }
-            }
-          />
-          <Botao
-            imagem={
-              {
-                url: foto,
-                descricao: 'teste'
-              }
-            }
-          /> */}
-          <Botao
-            imagem={
-              {
-                url: <MdOutlineDeleteOutline/>,
-                descricao: 'Botão com o icone de lixeira para excluir o o produto'
-              }
-            }
-          />
+    <>
+      <Header />
+      <div className={styles.principal}>
+        <div className={styles.imagem}>
+          <img src="https://ia902309.us.archive.org/view_archive.php?archive=/20/items/l_covers_0008/l_covers_0008_17.zip&file=0008172473-L.jpg" alt="Capa do livro {livro.nome}" />
         </div>
-      </div>
-    </div>
-  </>
-    
+
+        <div className={styles.conteudo}>
+          <form onSubmit={handleSubmit(addLivro)}>
+            <label htmlFor="titulo">Titulo</label>
+            <input type="text" id="titulo" name="titulo" />
+
+            <label htmlFor="preco">Preço R$</label>
+            <input type="text" id="preco" name="preco" />
+              <div className={styles.botoes}>
+
+              </div>
+          </form>
+        </div>
+      </div >
+    </>
+
   )
 }
