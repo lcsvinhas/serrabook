@@ -1,11 +1,13 @@
 import { BrowserRouter } from "react-router-dom";
 import AppRouter from "./routes/AppRouter.jsx";
-import Header from "./components/Header/index.jsx";
+import ThemeProvider from "./contexts/ThemeContext.jsx";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <AppRouter />
+      <ThemeProvider>
+        <AppRouter />
+      </ThemeProvider>
     </BrowserRouter>
   );
 }
