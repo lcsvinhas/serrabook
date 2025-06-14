@@ -7,7 +7,7 @@ export default function CardLivro({ titulo, preco, imagem }) {
       <img src={imagem} alt={titulo} className={styles.imagemLivro} />
       <h3 className={styles.titulo}>{titulo}</h3>
       <div className={styles.infoLivro}>
-        <span className={styles.precoLivro}>R$ {preco}</span>
+        <span className={`${styles.precoLivro} precoLivro`}>R$ {preco}</span>
         <button className={styles.botaoCarrinho}>
           <img
             src={shoppingCart}
