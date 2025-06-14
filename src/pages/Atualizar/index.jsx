@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import * as styles from './Atualizar.module.css'
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { MdOutlineDeleteOutline } from "react-icons/md";
 import Botao from "../../components/Botao";
 
 
@@ -33,7 +32,7 @@ export default function Atualizar() {
             <label htmlFor="preco">Preço R$</label>
             <input type="text" id="preco" name="preco" />
               <div className={styles.botoes}>
-
+                
               </div>
           </form>
         </div>
