@@ -1,0 +1,36 @@
+.tituloProdutos {
+  text-align: center;
+  margin: 40px 0px 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.containerProdutos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.cardInserir {
+  width: 200px;
+  height: 270px;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botaoInserir {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.iconeAlterar {
+  width: 20px;
+  height: 20px;
+}

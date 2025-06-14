@@ -1,5 +1,5 @@
 import * as styles from "./CardLivro.module.css";
-import shoppingCart from "./shopping-cart.png";
+import { ShoppingCart } from "phosphor-react";
 
 export default function CardLivro({ titulo, preco, imagem }) {
   return (
@@ -9,11 +9,7 @@ export default function CardLivro({ titulo, preco, imagem }) {
       <div className={styles.infoLivro}>
         <span className={styles.precoLivro}>R$ {preco}</span>
         <button className={styles.botaoCarrinho}>
-          <img
-            src={shoppingCart}
-            alt="Carrinho"
-            className={styles.iconeCarrinho}
-          />
+          <ShoppingCart />
         </button>
       </div>
     </div>
