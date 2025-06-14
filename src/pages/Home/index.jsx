@@ -3,7 +3,6 @@ import Header from "../../components/Header";
 import banner from "../../img/banner-1.png";
 import * as styles from "./Home.module.css";
 import { Link } from "react-router-dom";
-import CardLivro from "../../components/CardLivro";
 
 export default function Home() {
   return (
