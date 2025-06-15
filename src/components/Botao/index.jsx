@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import * as styles from "./Botao.module.css";
-import PropTypes from "prop-types";
 
 export default function Botao(props) {
     const botaoHTML = (
-        <button className={styles.btBotao} type="button" onClick={props.onClick}>
+        <button className={styles.btBotao} type={props.type || "button"} onClick={props.onClick}>
             <div className={styles.btIcone}>{props.icone}</div>
         </button>
     )

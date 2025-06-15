@@ -41,6 +41,12 @@
     justify-content: center;
 }
 
+.erroMensagem{
+    color: rgb(240, 47, 47);
+    font-size: clamp(1rem, 1.5vw, 3rem);
+    padding-bottom: 1em;
+}
+
 @media (max-width: 800px) {
     .principal {
         display: flex;
