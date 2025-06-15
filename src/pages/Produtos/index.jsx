@@ -1,4 +1,3 @@
-import CardLivro from "../../components/CardLivro";
 import * as styles from "./Produtos.module.css";
 import { Link } from "react-router-dom";
 import CardAtualizar from "../../components/CardAtualizar";
@@ -19,12 +18,40 @@ export default function Produtos() {
           Authorization: token,
         },
       })
-      .then((response) => {
-        console.log(response.data);
-        setLivro(response.data);
+      .then(async (response) => {
+        const listaLivros = response.data;
+
+        const livrosComCapa = await Promise.all(
+          listaLivros.map(async (livro) => {
+            try {
+              const detalhe = await axios.get(
+                `http://localhost:8080/isbn/${livro.isbn}`,
+                {
+                  headers: {
+                    Authorization: token,
+                  },
+                }
+              );
+
+              return {
+                ...livro,
+                urlCapa: detalhe.data.urlCapa,
+              };
+            } catch (error) {
+              console.error(
+                "Erro ao buscar a capa do livro:",
+                livro.isbn,
+                error
+              );
+              return { ...livro, urlCapa: null };
+            }
+          })
+        );
+
+        setLivro(livrosComCapa);
       })
       .catch(() => {
-        console.error("deu errado");
+        console.error("Erro ao buscar produtos");
       });
   }, []);
 
@@ -32,18 +59,24 @@ export default function Produtos() {
     <div>
       <Header />
       <h2 className={styles.tituloProdutos}>Produtos </h2>
-      {livro.map((livro, index) => (
-        <div key={index} className={styles.containerProdutos}>
-          <CardAtualizar nome={livro.nome} preco={livro.preco} />
-          <div className={styles.cardInserir}>
-            <Link to="/atualizar">
-              <button className={styles.botaoInserir}>
-                <PlusCircle />
-              </button>
-            </Link>
+      <div className={styles.containerCard}>
+        {livro.map((livro, index) => (
+          <div key={index} className={styles.containerProdutos}>
+            <CardAtualizar
+              nome={livro.nome}
+              preco={livro.preco}
+              urlCapa={livro.urlCapa}
+            />
           </div>
+        ))}
+        <div className={styles.cardInserir}>
+          <Link to="/atualizar">
+            <button className={styles.botaoInserir}>
+              <PlusCircle />
+            </button>
+          </Link>
         </div>
-      ))}
+      </div>
     </div>
   );
 }
