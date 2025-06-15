@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import * as styles from "./Header.module.css";
 import logoBranca from "../../img/logo-branca-1.png";
 import vector from "../../img/vector.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 import lua from "../../assets/lua.svg"
 import sol from "../../assets/sol.svg"
@@ -10,6 +10,14 @@ import sol from "../../assets/sol.svg"
 export default function Header() {
     const [menuAberto, setMenuAberto] = useState(false);
     const { darkMode, toggleTheme } = useTheme();
+    const [nomeUsuario, setNomeUsuario] = useState("");
+
+    useEffect(() => {
+        const nomeSalvo = localStorage.getItem("nomeUsuario");
+        if (nomeSalvo) {
+            setNomeUsuario(nomeSalvo);
+        }
+    }, []);
 
     const toggleMenu = () => setMenuAberto(!menuAberto);
 
@@ -21,14 +29,13 @@ export default function Header() {
 
             <div className={styles.contato}>
                 <img src={vector} alt="Contorno de um ser humano, ilustrando um perfil" />
-                <h2>Bem vindo, usuário</h2>
+                <h2>Bem vindo, {nomeUsuario || "usuário"}</h2>
             </div>
 
             <nav className={`${styles.menu} ${menuAberto ? styles.ativo : ""}`}>
                 <ul>
                     <li><Link className={styles.elemento} to={"/produtos"}>Produtos</Link></li>
                     <li><Link className={styles.elemento} to={"/login"}>Login</Link></li>
-                    <li><Link className={styles.elemento} to={"/atualizar"}>Atualizar</Link></li>
                     <li>
                         <label className={styles.themeSwitch}>
                             <input

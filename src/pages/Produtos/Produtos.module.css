@@ -13,13 +13,18 @@
 }
 
 .cardInserir {
-  width: 200px;
-  height: 270px;
+  width: 250px;
+  height: 480px;
   border: 2px dashed #ccc;
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.cardInserir:hover {
+  transform: scale(1.05);
 }
 
 .botaoInserir {
@@ -33,4 +38,13 @@
 .iconeAlterar {
   width: 20px;
   height: 20px;
+}
+
+.containerCard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
 }
