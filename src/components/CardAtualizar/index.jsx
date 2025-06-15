@@ -1,7 +1,8 @@
 import * as styles from "./CardAtualizar.module.css";
 import CardLivro from "../../components/CardLivro";
 
-export default function CardAtualizar({nome, preco, urlCapa}) {
+export default function CardAtualizar({ nome, preco, urlCapa }) {
+
   return (
     <>
       <div className={styles.containerAtualizar}>

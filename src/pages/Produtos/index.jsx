@@ -4,19 +4,21 @@ import CardAtualizar from "../../components/CardAtualizar";
 import { PlusCircle } from "phosphor-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Header from "../../components/Header"
+
+import Header from "../../components/Header";
 
 export default function Produtos() {
   const [livro, setLivro] = useState([]);
 
   useEffect(() => {
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem("token");
 
     axios
       .get("http://localhost:8080/produtos", {
         headers: {
           Authorization: token
         }
+
       })
       .then(async (response) => {
         const listaLivros = response.data;
@@ -36,11 +38,11 @@ export default function Produtos() {
               };
             } catch (error) {
               console.error("Erro ao buscar a capa do livro:", livro.isbn, error);
+
               return { ...livro, urlCapa: null };
             }
           })
         );
-
 
         setLivro(livrosComCapa);
       })
@@ -56,6 +58,7 @@ export default function Produtos() {
       <div className={styles.containerCard}>
         {livro.map((livro, index) => (
           <div key={index} className={styles.containerProdutos}>
+
             <CardAtualizar nome={livro.nome} preco={livro.preco} urlCapa={livro.urlCapa} />
           </div>
         ))}

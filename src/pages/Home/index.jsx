@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import banner from "../../img/banner-1.png";
 import * as styles from "./Home.module.css";
 import { Link } from "react-router-dom";
+
 import axios from "axios";
 
 export default function Home() {
