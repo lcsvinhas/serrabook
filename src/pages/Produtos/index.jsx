@@ -70,7 +70,7 @@ export default function Produtos() {
           </div>
         ))}
         <div className={styles.cardInserir}>
-          <Link to="/atualizar">
+          <Link to= {`/atualizar/${id}`}>
             <button className={styles.botaoInserir}>
               <PlusCircle />
             </button>

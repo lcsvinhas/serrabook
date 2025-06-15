@@ -23,7 +23,7 @@ const validationPost = yup.object().shape({
 
 export default function Atualizar() {
   const { id } = useParams();
-  const { imgISBN } = useParams();
+  // const { imgISBN } = useParams();
   let navigate = useNavigate();
   const {
     register,
