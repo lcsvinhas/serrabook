@@ -17,11 +17,9 @@ export default function Login() {
   let navigate = useNavigate()
   const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(validationPost) })
   const login = (data => {
-
     let nomeUsuario = data.username.split("@")[0];
     nomeUsuario = nomeUsuario.charAt(0).toUpperCase() + nomeUsuario.slice(1);
     localStorage.setItem("nomeUsuario", nomeUsuario);
-
     axios.post("http://localhost:8080/login", data)
       .then((response) => {
         const token = response.headers.get("Authorization");

@@ -58,17 +58,20 @@ export default function Produtos() {
       <div className={styles.containerCard}>
         {livro.map((livro, index) => (
           <div key={index} className={styles.containerProdutos}>
-
-            <CardAtualizar nome={livro.nome} preco={livro.preco} urlCapa={livro.urlCapa} />
+            <CardAtualizar
+              nome={livro.nome}
+              preco={livro.preco}
+              urlCapa={livro.urlCapa}
+              id={livro.id}
+            />
           </div>
         ))}
-        <Link to="/atualizar">
-          <div className={styles.cardInserir}>
-            <button className={styles.botaoInserir}>
-              <PlusCircle />
-            </button>
-          </div>
-        </Link>
+        <div className={styles.cardInserir}>
+          <button className={styles.botaoInserir}>
+            <PlusCircle />
+          </button>
+        </div>
+
       </div>
     </div>
   );

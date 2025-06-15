@@ -1,22 +1,36 @@
-.btnIcon {
+.btPrincipal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0.5rem;
-    max-height: 60px;
-    max-width: 60px;
-    min-height: 30px;
-    min-width: 30px;
+    max-height: 80px;
+    max-width: 80px;
+    min-height: 40px;
+    min-width: 40px;
 }
 
-.btnIcon button {
+.btBotao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--cor-botao-fundo);
     border: none;
     border-radius: 40%;
     cursor: pointer;
+    height: 100%;
+    width: 100%;
 }
 
-.btnIcon img {
-    max-height: 80%;
-    max-width: 80%;
-    height: auto;
-    width: auto;
-    object-fit: contain;
+.btIcone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+}
+
+.btIcone > svg,
+.btIcone > img {
+    width: 3em;
+    height: 3em;
 }
