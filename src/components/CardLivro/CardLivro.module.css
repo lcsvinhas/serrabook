@@ -1,4 +1,5 @@
 .cardLivro {
+  height: 400px;
   width: 200px;
   padding: 12px;
   font-family: Arial, Helvetica, sans-serif;
@@ -6,8 +7,8 @@
 }
 
 .imagemLivro {
-  width: 100%;
-  height: auto;
+  width: 180px;
+  height: 300px;
   border-radius: 12px;
 }
 
