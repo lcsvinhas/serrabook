@@ -66,15 +66,14 @@ export default function Produtos() {
               nome={livro.nome}
               preco={livro.preco}
               urlCapa={livro.urlCapa}
+              id={livro.id}
             />
           </div>
         ))}
         <div className={styles.cardInserir}>
-          <Link to= {`/atualizar/${id}`}>
-            <button className={styles.botaoInserir}>
-              <PlusCircle />
-            </button>
-          </Link>
+          <button className={styles.botaoInserir}>
+            <PlusCircle />
+          </button>
         </div>
       </div>
     </div>
