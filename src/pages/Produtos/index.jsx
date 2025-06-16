@@ -1,5 +1,4 @@
 import * as styles from "./Produtos.module.css";
-import { Link } from "react-router-dom";
 import CardAtualizar from "../../components/CardAtualizar";
 import { PlusCircle } from "phosphor-react";
 import { useEffect, useState } from "react";
