@@ -82,7 +82,7 @@ export default function Atualizar() {
     const token = getToken();
 
     const { id: _ignored, categoriaId, ...rest } = data;
-    const corrigindoJSON = { ...rest, idCategoria: categoriaId};
+    const corrigindoJSON = { ...rest, idCategoria: categoriaId };
     axios.put(`http://localhost:8080/produtos/${id}`, corrigindoJSON, {
       headers: {
         Authorization: token,
@@ -90,7 +90,7 @@ export default function Atualizar() {
     })
       .then(() => {
         console.log("Livro atualizado com sucesso");
-        navigate("/")
+        navigate("/produtos")
       })
       .catch((error) => console.error("Erro ao atualizar o livro:", error));
   }
@@ -105,7 +105,7 @@ export default function Atualizar() {
     })
       .then(() => {
         console.log("Livro apagado com sucesso.");
-        navigate("/");
+        navigate("/produtos");
       })
       .catch((error) => {
         if (error.response && error.response.status === 404) {
@@ -121,7 +121,7 @@ export default function Atualizar() {
       <Header />
       <div className={styles.principal}>
         <div className={styles.imagem}>
-          <img src={livro.urlCapa} alt={`Capa do livro ${livro.nome}`}/>
+          <img src={livro.urlCapa} alt={`Capa do livro ${livro.nome}`} />
         </div>
 
         <form onSubmit={handleSubmit(addLivro)} className={styles.conteudo}>
@@ -135,7 +135,7 @@ export default function Atualizar() {
 
           <div className={styles.botoes}>
             <Botao icone={<Check color="DarkGreen" />} type={"submit"} aria-label="Botão que salva as alterações do livro" />
-            <Botao linkPagina="/" icone={<X color="brown" />} aria-label="Botão descartar as alterações do livro" />
+            <Botao linkPagina="/produtos" icone={<X color="brown" />} aria-label="Botão descartar as alterações do livro" />
             <Botao onClick={() => deletarLivro(id)} icone={<TrashSimple />} aria-label="Botão que exclui o livro" />
           </div>
         </form>

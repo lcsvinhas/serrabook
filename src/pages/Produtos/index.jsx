@@ -4,7 +4,6 @@ import CardAtualizar from "../../components/CardAtualizar";
 import { PlusCircle } from "phosphor-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
 import Header from "../../components/Header";
 
 export default function Produtos() {
@@ -71,7 +70,6 @@ export default function Produtos() {
             <PlusCircle />
           </button>
         </div>
-
       </div>
     </div>
   );
