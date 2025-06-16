@@ -1,0 +1,27 @@
+.footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 14px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slogan {
+    font-style: italic;
+    margin: 5px 0 15px 0;
+    color: var(--cor-fundo-primaria);
+}
+
+.githubLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--cor-fundo-primaria);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.githubLink:hover {
+    color: var(--cor-branco);
+}

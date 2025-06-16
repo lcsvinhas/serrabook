@@ -1,7 +1,6 @@
 .tituloProdutos {
   text-align: center;
   margin: 40px 0px 20px 0;
-  font-family: Arial, sans-serif;
 }
 
 .containerProdutos {
@@ -13,6 +12,7 @@
 }
 
 .cardInserir {
+  margin-bottom: 30px;
   width: 250px;
   height: 480px;
   border: 2px dashed #ccc;

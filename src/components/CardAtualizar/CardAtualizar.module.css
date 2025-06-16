@@ -1,11 +1,11 @@
 .containerAtualizar {
+  margin-bottom: 30px;
   width: 250px;
   border: 1px solid #ccc;
   border-radius: 12px;
   padding: 12px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  font-family: Arial, sans-serif;
 
   display: flex;
   flex-direction: column;
