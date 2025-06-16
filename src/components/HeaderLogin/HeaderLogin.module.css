@@ -7,6 +7,7 @@ header {
     padding: 10px 20px;
     background-color: var(--cor-fundo-header);
     color: var(--cor-branco);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 ul {
