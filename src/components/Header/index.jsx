@@ -38,7 +38,7 @@ export default function Header() {
           alt="Contorno de um ser humano, ilustrando um perfil"
         />
        
-      <h2>Bem vindo, {nomeUsuario || "usuário"}</h2>/
+      <h2>Bem vindo, {nomeUsuario || "usuário"}</h2>
       </div>
 
       <nav className={`${styles.menu} ${menuAberto ? styles.ativo : ""}`}>
