@@ -15,8 +15,9 @@ export default function Produtos() {
     axios
       .get("http://localhost:8080/produtos", {
         headers: {
-          Authorization: token,
-        },
+          Authorization: token
+        }
+
       })
       .then(async (response) => {
         const listaLivros = response.data;
@@ -24,25 +25,19 @@ export default function Produtos() {
         const livrosComCapa = await Promise.all(
           listaLivros.map(async (livro) => {
             try {
-              const detalhe = await axios.get(
-                `http://localhost:8080/isbn/${livro.isbn}`,
-                {
-                  headers: {
-                    Authorization: token,
-                  },
+              const detalhe = await axios.get(`http://localhost:8080/isbn/${livro.isbn}`, {
+                headers: {
+                  Authorization: token
                 }
-              );
+              });
 
               return {
                 ...livro,
-                urlCapa: detalhe.data.urlCapa,
+                urlCapa: detalhe.data.urlCapa
               };
             } catch (error) {
-              console.error(
-                "Erro ao buscar a capa do livro:",
-                livro.isbn,
-                error
-              );
+              console.error("Erro ao buscar a capa do livro:", livro.isbn, error);
+
               return { ...livro, urlCapa: null };
             }
           })
@@ -66,15 +61,14 @@ export default function Produtos() {
               nome={livro.nome}
               preco={livro.preco}
               urlCapa={livro.urlCapa}
+              id={livro.id}
             />
           </div>
         ))}
         <div className={styles.cardInserir}>
-          <Link to="/atualizar">
-            <button className={styles.botaoInserir}>
-              <PlusCircle />
-            </button>
-          </Link>
+          <button className={styles.botaoInserir}>
+            <PlusCircle />
+          </button>
         </div>
       </div>
     </div>

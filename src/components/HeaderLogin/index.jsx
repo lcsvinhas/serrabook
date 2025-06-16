@@ -22,7 +22,6 @@ export default function HeaderLogin() {
                 <ul>
                     <li><Link className={styles.elemento} to={"/produtos"}>Produtos</Link></li>
                     <li><Link className={styles.elemento} to={"/login"}>Login</Link></li>
-                    <li><Link className={styles.elemento} to={"/atualizar"}>Atualizar</Link></li>
                     <li>
                         <label className={styles.themeSwitch}>
                             <input

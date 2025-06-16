@@ -1,10 +1,20 @@
 import Header from "../../components/Header";
+import gif404 from "../../assets/404.gif";
 
 export default function Error() {
   return (
     <div>
       <Header />
-      <h2>404 - Página não encontrada</h2>
+      <img
+        src={gif404}
+        alt="Página não encontrada"
+        style={{
+          display: "block",
+          margin: "30px auto",
+          minHeight: "60vh",
+          maxWidth: "100%"
+        }}
+      />
     </div>
-  )
+  );
 }

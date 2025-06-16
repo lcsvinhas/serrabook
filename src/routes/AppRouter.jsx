@@ -12,7 +12,7 @@ export default function AppRouter() {
       <Route path={"/"} element={<Home />} />
       <Route path={"/produtos"} element={<Produtos />} />
       <Route path={"/login"} element={<Login />} />
-      <Route path={"/atualizar"} element={<Atualizar />} />
+      <Route path={"/atualizar/:id"} element={<Atualizar />} />
       <Route path={"*"} element={<Error />} />
       <Route path={"/cadastro"} element={<Cadastro />} />
     </Routes>
