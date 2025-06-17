@@ -5,11 +5,16 @@ export default function CardLivro({ titulo, preco, imagem }) {
   return (
     <div className={styles.cardLivro}>
       <img src={imagem} alt={titulo} className={styles.imagemLivro} />
-      <h3 className={styles.titulo}>{titulo}</h3>
-      <div className={styles.infoLivro}>
-        <span className={`${styles.precoLivro} precoLivro`}>R$ {preco}</span>
+
+      <div className={styles.boxInfo}>
+        <div className={styles.infoTexto}>
+          {" "}
+          {/* Nova div para agrupar título e preço */}
+          <h3 className={styles.titulo}>{titulo}</h3>
+          <span className={`${styles.precoLivro} precoLivro`}>R$ {preco}</span>
+        </div>
         <button className={styles.botaoCarrinho}>
-          <ShoppingCart />
+          <ShoppingCart size={20} />
         </button>
       </div>
     </div>

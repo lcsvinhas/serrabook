@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function Home() {
-  const [livros, setLivros] = useState([])
+  const [livros, setLivros] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
