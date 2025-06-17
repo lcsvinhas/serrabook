@@ -1,0 +1,51 @@
+.tituloProdutos {
+  text-align: center;
+  margin: 40px 0px 20px 0;
+}
+
+.containerFiltros {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.botaoFiltro {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.botaoFiltro:hover {
+  background-color: #edf2f7;
+  border-color: #a0aec0;
+}
+
+.botaoFiltro.ativo {
+  background-color: #2c5282;
+  color: white;
+  border-color: #2c5282;
+}
+
+.containerProdutos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.containerCard {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0 20px;
+}

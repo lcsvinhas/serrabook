@@ -50,7 +50,7 @@ export default function Cadastro() {
     //stackoverflow
     console.log(JSON.stringify(data));
 
-    // estava como setItem, trocamos para getItem
+    // estava como setItem, corrigido para getItem
     const token = localStorage.getItem("token");
 
     axios

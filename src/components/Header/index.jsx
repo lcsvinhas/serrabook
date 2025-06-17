@@ -6,26 +6,30 @@ import { useEffect, useState } from "react";
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 import lua from "../../assets/lua.svg";
 import sol from "../../assets/sol.svg";
+import { ShoppingCart } from "phosphor-react";
 
 export default function Header() {
+  const [menuAberto, setMenuAberto] = useState(false);
+  const { darkMode, toggleTheme } = useTheme();
+  const [nomeUsuario, setNomeUsuario] = useState("");
 
-    const [menuAberto, setMenuAberto] = useState(false);
-    const { darkMode, toggleTheme } = useTheme();
-    const [nomeUsuario, setNomeUsuario] = useState("");
-
-    useEffect(() => {
-        const nomeSalvo = localStorage.getItem("nomeUsuario");
-        if (nomeSalvo) {
-            setNomeUsuario(nomeSalvo);
-        }
-    }, []);
+  useEffect(() => {
+    const nomeSalvo = localStorage.getItem("nomeUsuario");
+    if (nomeSalvo) {
+      setNomeUsuario(nomeSalvo);
+    }
+  }, []);
 
   const toggleMenu = () => setMenuAberto(!menuAberto);
 
   return (
     <header className={styles.header}>
       <Link to={"/"}>
-        <img src={logoBranca} alt="Logotipo do sebo virtual Serrabook" />
+        <img
+          src={logoBranca}
+          className={styles.logo}
+          alt="Logotipo do sebo virtual Serrabook"
+        />
       </Link>
 
       <button onClick={toggleMenu} className={styles.menuBtn}>
@@ -35,10 +39,11 @@ export default function Header() {
       <div className={styles.contato}>
         <img
           src={vector}
+          className={styles.perfilIcone}
           alt="Contorno de um ser humano, ilustrando um perfil"
         />
-       
-      <h2>Bem vindo, {nomeUsuario || "usuário"}</h2>/
+
+        <h2>Bem vindo, {nomeUsuario || "usuário"}</h2>
       </div>
 
       <nav className={`${styles.menu} ${menuAberto ? styles.ativo : ""}`}>
@@ -58,6 +63,20 @@ export default function Header() {
               Atualizar
             </Link>
           </li>
+          <li>
+            <Link className={styles.elemento} to={"/produtoscliente"}>
+              Prod
+            </Link>
+          </li>
+
+          <li>
+            <div className={styles.carrinho}>
+              <button className={styles.botaoCarrinho}>
+                <ShoppingCart />
+              </button>
+              <span className={styles.qtdCarrinho}>0</span>
+            </div>
+          </li>
 
           <li>
             <label className={styles.themeSwitch}>
@@ -76,5 +95,4 @@ export default function Header() {
       </nav>
     </header>
   );
-
 }

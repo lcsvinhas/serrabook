@@ -1,31 +1,32 @@
 .banner {
-    width: 100%;
+  width: 100%;
 }
 
 .verMais {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-    padding: 40px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  padding: 40px;
 }
 
 .verMais button {
-    background-color: var(--cor-fundo-header);
-    width: 400px;
-    color: var(--cor-branco);
-    border: none;
-    border-radius: 30px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+  background-color: var(--cor-fundo-header);
+  width: 400px;
+  color: var(--cor-branco);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .verMais button:hover {
-    background-color: var(--cor-primaria);
+  background-color: var(--cor-primaria);
 }
 .cardHome {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* mudei isso antes: margin-top:30px */
+  margin: 40px 50px;
 }

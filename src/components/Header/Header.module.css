@@ -1,167 +1,214 @@
-header {
-    min-height: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: var(--cor-fundo-header);
-    color: var(--cor-branco);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.header {
+  min-height: 50px; /* Mexi aqui. antes: 100px*/
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px; /* Mexi aqui. antes: 5x e 10px*/
+  background-color: var(--cor-fundo-header);
+  color: var(--cor-branco);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mexi aqui. antes: 4px 8px*/
+}
+
+.logo {
+  height: 60px;
+  width: auto;
+}
+
+.perfilIcone {
+  height: 25px;
+  width: auto;
 }
 
 ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  gap: 10px; /* Mexi aqui. antes: 20px*/
 }
 
 .elemento {
-    text-decoration: none;
-    color: var(--cor-branco);
+  text-decoration: none;
+  color: var(--cor-branco);
 }
 
 .elemento:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .contato {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .contato h2 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: normal;
+  margin: 0;
+  font-size: 12px; /* Mexi aqui. antes: 16px*/
+  font-weight: normal;
 }
 
 .menuBtn {
-    display: none;
-    font-size: 30px;
-    background: none;
-    border: none;
-    color: var(--cor-branco);
-    cursor: pointer;
+  display: none;
+  font-size: 24px; /* Mexi aqui. antes: 30px*/
+  background: none;
+  border: none;
+  color: var(--cor-branco);
+  cursor: pointer;
 }
 
 .menu {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .themeToggleContainer {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .themeSwitch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 30px;
-    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
 }
 
 .themeSwitch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: var(--cor-botao-fundo);
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--cor-botao-fundo);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Mexi aqui */
+  padding: 0 3px;
+  height: 25px;
+  width: 50px;
 }
 
 .slider::before {
-    position: absolute;
-    content: "";
-    height: 35px;
-    width: 35px;
-    left: 0;
-    background-color: var(--cor-secundaria);
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 50%;
-    z-index: 1;
+  position: absolute;
+  content: "";
+  height: 25px; /* Mexi aqui. antes: 35px */
+  width: 25px; /* Mexi aqui. antes: 35px */
+  left: 0;
+  background-color: var(--cor-secundaria);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+  z-index: 1;
 }
 
-.themeSwitch input:checked+.slider {
-    background-color: var(--cor-botao-fundo);
+.themeSwitch input:checked + .slider {
+  background-color: var(--cor-botao-fundo);
 }
 
-.themeSwitch input:checked+.slider::before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+.themeSwitch input:checked + .slider::before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 .iconMoon,
 .iconSun {
-    font-size: 1.2em;
-    position: relative;
-    z-index: 2;
-    transition: opacity 0.4s ease;
+  font-size: 1em; /* mexi aqui. antes: 1.2 */
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.4s ease;
 }
 
 .iconMoon {
-    opacity: 1;
+  opacity: 1;
 }
 
 .iconSun {
-    opacity: 0;
+  opacity: 0;
 }
 
-.themeSwitch input:checked+.slider .iconMoon {
-    opacity: 0;
+.themeSwitch input:checked + .slider .iconMoon {
+  opacity: 0;
 }
 
-.themeSwitch input:checked+.slider .iconSun {
-    opacity: 1;
+.themeSwitch input:checked + .slider .iconSun {
+  opacity: 1;
+}
+
+.carrinho {
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.botaoCarrinho {
+  background-color: #a5ee2c;
+  color: #021024;
+  border: none;
+  padding: 3px 7px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.qtdCarrinho {
+  position: absolute;
+  top: 66.6667%;
+  right: 50%;
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.875rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 800px) {
-    .menuBtn {
-        display: block;
-    }
+  .menuBtn {
+    font-size: 24px;
+    /*tirei display: block; */
+  }
 
-    .menu {
-        width: 100%;
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.4s ease-out;
-        justify-content: flex-end;
-    }
+  .menu {
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease-out;
+    justify-content: flex-end;
+  }
 
-    .menu.ativo {
-        max-height: 300px;
-        transition: max-height 0.4s ease-in;
-    }
+  .menu.ativo {
+    max-height: 300px;
+    transition: max-height 0.4s ease-in;
+  }
 
-    .menu ul {
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 10px;
-        padding: 0;
-        margin: 10px 0 0 0;
-    }
+  .menu ul {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px; /*antes 10px */
+    padding: 0;
+    margin: 5px 0 0 0; /*antes 10px; */
+  }
 
-    .contato {
-        display: none;
-    }
+  .contato {
+    display: none;
+  }
 }
