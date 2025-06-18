@@ -1,7 +1,6 @@
 .header {
   min-height: 50px; /* Mexi aqui. antes: 100px*/
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 5px 10px; /* Mexi aqui. antes: 5x e 10px*/
@@ -11,12 +10,12 @@
 }
 
 .logo {
-  height: 60px;
+  height: 40px;
   width: auto;
 }
 
 .perfilIcone {
-  height: 25px;
+  height: 20px;
   width: auto;
 }
 
@@ -24,11 +23,14 @@ ul {
   list-style: none;
   display: flex;
   gap: 10px; /* Mexi aqui. antes: 20px*/
+  margin: 0;
+  padding: 0;
 }
 
 .elemento {
   text-decoration: none;
   color: var(--cor-branco);
+  font-size: 0.9rem;
 }
 
 .elemento:hover {
@@ -184,7 +186,6 @@ ul {
 @media (max-width: 800px) {
   .menuBtn {
     font-size: 24px;
-    /*tirei display: block; */
   }
 
   .menu {
@@ -210,5 +211,23 @@ ul {
 
   .contato {
     display: none;
+  }
+
+  @media (max-width: 800px) {
+    .menuBtn {
+      display: block;
+    }
+
+    .contato {
+      display: none;
+    }
+
+    .menu ul {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+      padding: 0;
+      margin: 5px 0 0 0;
+    }
   }
 }

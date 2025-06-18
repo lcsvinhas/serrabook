@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import CardLivro from "../../components/CardLivro";
+import { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 import Header from "../../components/Header";
+import CardLivro from "../../components/CardLivro";
 import banner from "../../img/banner-1.png";
 import * as styles from "./Home.module.css";
-import { Link } from "react-router-dom";
-
-import axios from "axios";
+import { Package, Coins, IdentificationCard, Books } from "phosphor-react";
 
 export default function Home() {
   const [livros, setLivros] = useState([]);
@@ -55,11 +55,42 @@ export default function Home() {
   return (
     <div>
       <Header />
+
       <img
         className={styles.banner}
         src={banner}
         alt="Banner sobre o Serrabook Day. Possui três livros de programação em pé e em perspectiva."
       />
+
+      <div className={styles.cardIcones}>
+        <div className={styles.boxIcones}>
+          <Package size={48} className={styles.icone} />
+          <p className={styles.titulo}>NOVIDADES</p>
+          <p className={styles.texto}> Atualizamos o acervo toda semana.</p>
+        </div>
+
+        <div className={styles.boxIcones}>
+          <Coins size={48} className={styles.icone} />
+          <p className={styles.titulo}>BARATINHOS</p>
+          <p className={styles.texto}>Sua leitura por uma pechincha.</p>
+        </div>
+
+        <div className={styles.boxIcones}>
+          <IdentificationCard
+            size={48}
+            weight="fill"
+            className={styles.icone}
+          />
+          <p className={styles.titulo}>SEJA MEMBRO</p>
+          <p className={styles.texto}>Assine nosso clube do livro.</p>
+        </div>
+
+        <div className={styles.boxIcones}>
+          <Books size={48} className={styles.icone} />
+          <p className={styles.titulo}>TRATO FEITO</p>
+          <p className={styles.texto}>Negocie seus livros conosco.</p>
+        </div>
+      </div>
 
       <div className={styles.cardHome}>
         {livros.map((livro, index) => (
