@@ -1,10 +1,12 @@
 .cardLivro {
-  height: 400px;
-  width: 200px;
+  height: 350px;
+  width: 175px;
   padding: 12px;
+  margin-top: 10px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
+  gap: 3px;
 }
 
 .imagemLivro {
@@ -14,30 +16,24 @@
   object-fit: cover;
 }
 
-.boxInfo {
-  margin-top: 10px;
+.infoLivro {
+  margin-top: -10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
 }
 
-.infoTexto {
-  display: flex;
-  flex-direction: column;
-}
-
 .titulo {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: normal;
-  margin: 0;
+  margin: 10px 0;
 }
 
 .precoLivro {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   color: #2c3e50;
-  margin-top: 5px;
 }
 
 .botaoCarrinho {

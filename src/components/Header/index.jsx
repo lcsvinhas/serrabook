@@ -7,11 +7,15 @@ import { useTheme } from "../../contexts/ThemeContext.jsx";
 import lua from "../../assets/lua.svg";
 import sol from "../../assets/sol.svg";
 import { ShoppingCart } from "phosphor-react";
+import { useCart } from "../../contexts/CarrinhoContext.jsx";
+import CarrinhoModal from "../CarrinhoModal/CarrinhoModal.jsx";
 
 export default function Header() {
   const [menuAberto, setMenuAberto] = useState(false);
   const { darkMode, toggleTheme } = useTheme();
   const [nomeUsuario, setNomeUsuario] = useState("");
+  const [modalAberto, setModalAberto] = useState(false);
+  const { cartItems } = useCart();
 
   useEffect(() => {
     const nomeSalvo = localStorage.getItem("nomeUsuario");
@@ -22,13 +26,18 @@ export default function Header() {
 
   const toggleMenu = () => setMenuAberto(!menuAberto);
 
+  const quantidadeTotal = cartItems.reduce(
+    (acc, item) => acc + item.quantidade,
+    0
+  );
+
   return (
     <header className={styles.header}>
       <Link to={"/"}>
         <img
           src={logoBranca}
-          className={styles.logo}
           alt="Logotipo do sebo virtual Serrabook"
+          className={styles.logo}
         />
       </Link>
 
@@ -37,44 +46,35 @@ export default function Header() {
       </button>
 
       <div className={styles.contato}>
-        <img
-          src={vector}
-          className={styles.perfilIcone}
-          alt="Contorno de um ser humano, ilustrando um perfil"
-        />
-
+        <img src={vector} alt="Perfil" />
         <h2>Bem vindo, {nomeUsuario || "usuário"}</h2>
       </div>
 
       <nav className={`${styles.menu} ${menuAberto ? styles.ativo : ""}`}>
         <ul>
           <li>
-            <Link className={styles.elemento} to={"/produtos"}>
-              Produtos
-            </Link>
-          </li>
-          <li>
             <Link className={styles.elemento} to={"/login"}>
               Login
             </Link>
           </li>
-          <li>
-            <Link className={styles.elemento} to={"/atualizar"}>
-              Atualizar
-            </Link>
-          </li>
+
           <li>
             <Link className={styles.elemento} to={"/produtoscliente"}>
-              Prod
+              Produtos
             </Link>
           </li>
 
           <li>
             <div className={styles.carrinho}>
-              <button className={styles.botaoCarrinho}>
+              <button
+                className={styles.botaoCarrinho}
+                onClick={() => setModalAberto(true)}
+              >
                 <ShoppingCart />
               </button>
-              <span className={styles.qtdCarrinho}>0</span>
+              {quantidadeTotal > 0 && (
+                <span className={styles.qtdCarrinho}>{quantidadeTotal}</span>
+              )}
             </div>
           </li>
 
@@ -93,6 +93,12 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+
+      {/* Modal do Carrinho */}
+      <CarrinhoModal
+        aberto={modalAberto}
+        fechar={() => setModalAberto(false)}
+      />
     </header>
   );
 }

@@ -14,14 +14,17 @@
   width: 400px;
   color: var(--cor-branco);
   border: none;
-  border-radius: 30px;
+  border-radius: 6px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s, color 0.3s;
 }
 
 .verMais button:hover {
-  background-color: var(--cor-primaria);
+  background-color: #7da0ca;
+  color: var(--cor-primaria);
+  transform: scale(1.05);
 }
 .cardHome {
   display: flex;
@@ -29,4 +32,63 @@
   flex-wrap: wrap;
   /* mudei isso antes: margin-top:30px */
   margin: 40px 50px;
+}
+
+.cardIcones {
+  background-color: #7da0ca;
+  display: flex;
+  justify-content: space-around;
+  margin: 60px 50px;
+  border-radius: 8px;
+}
+
+.boxIcones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.boxIcones:hover {
+  color: var(--cor-secundaria);
+}
+
+.icone {
+  transition: transform 0.3s, color 0.3s;
+  color: #fff;
+}
+
+.boxIcones:hover .icone {
+  transform: scale(1.2);
+  color: var(--cor-primaria);
+}
+
+.boxIcones p {
+  margin-top: 10px;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.boxIcones:hover p {
+  color: var(--cor-primaria);
+}
+
+.boxIcones .titulo {
+  color: #fff;
+  font-weight: 700;
+}
+
+.boxIcones .texto {
+  color: #fff;
+  font-weight: 200;
+}
+
+.tituloProdutos {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  margin: 40px 0px 20px 0;
 }

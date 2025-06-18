@@ -11,9 +11,9 @@ export default function Catalogo() {
 
   // usando categorias fixas
   const categoriasFiltro = [
-    { id: 1, nome: "Categoria 1" },
-    { id: 2, nome: "Categoria 2" },
-    { id: 3, nome: "Categoria 3" },
+    { id: 1, nome: "Tecnologia" },
+    { id: 2, nome: "Gestão" },
+    { id: 3, nome: "Biografias" },
   ];
 
   // useEffect(() => {
